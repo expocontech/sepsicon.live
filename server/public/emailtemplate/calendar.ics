@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+X-WR-CALNAME:test
+NAME:test
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Asia/Kolkata
+TZURL:http://tzurl.org/zoneinfo-outlook/Asia/Kolkata
+X-LIC-LOCATION:Asia/Kolkata
+BEGIN:STANDARD
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+TZNAME:IST
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20200826T133800Z
+UID:20200826T133800Z-1315304820@marudot.com
+DTSTART;TZID=Asia/Calcutta:20200912T140000
+DTEND;TZID=Asia/Calcutta:20200912T203000
+SUMMARY:RSSDI - Diabetes Technology Network (DTN)
+URL:https%3A%2F%2Fwww.dtnrssdi.live
+DESCRIPTION:Organized by\nRSSDI Diabetes & Technology Task Force\nDr. Banshi Saboo\nPresident - RSSDI\n\nDr. Sanjay Agarwal\nSecretary - RSSDI\n\nDr. Jothydev Kesavadev\nTrivandrum\n\nDr. Manoj Chawla\nMumbai\n\nDr. Mithun Bhartia\nGuwahati\n\nDr. Jaiprakash Sai\nHyderabad
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:RSSDI - Diabetes Technology Network (DTN)
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

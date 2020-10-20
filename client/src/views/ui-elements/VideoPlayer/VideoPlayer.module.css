@@ -1,0 +1,10 @@
+.VideoPlayer {
+  position: fixed;
+  top: 0;
+  width: 100% !important;
+  height: 100%;
+  z-index: 11111111 !important;
+  background: #000;
+  padding: 0px;
+  object-fit: cover;
+}
