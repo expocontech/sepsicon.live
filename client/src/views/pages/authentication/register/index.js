@@ -14,12 +14,18 @@ import {
 } from "reactstrap"
 import classnames from "classnames"
 import SignupForm from "./SignupForm"
-import registerImg from "../../../../assets/img/pages/register.jpg"
+import registerImg from "../../../../assets/img/pages/logo.png"
+import registrationleft from "../../../../assets/img/pages/registrationleft.jpg" 
+import loginmiddle from "../../../../assets/img/pages/loginmiddle.png" 
+import loginbottom from "../../../../assets/img/pages/loginbottom.png" 
 import "../../../../assets/scss/pages/authentication.scss"
-
+import { history } from "../../../../history"
+import axios from "axios"
 class Register extends React.Component {
   state = {
-    activeTab: "1"
+    activeTab: "1",
+    logo: '',
+    rtext: ''
   }
   toggle = tab => {
     if (this.state.activeTab !== tab) {
@@ -28,43 +34,57 @@ class Register extends React.Component {
       })
     }
   }
+
+
+  componentDidMount = () => {
+    axios.get(`${process.env.REACT_APP_BASENAME}eventsetting`).then(
+      (response) => {
+        console.log("response", response);
+        if (response.data.status == true) {
+          this.setState({
+            logo: `${process.env.REACT_APP_BASENAME}` + response.data.logo,
+            rtext: response.data.registertext
+          })
+        }
+
+      }
+
+    ).catch((error) => {
+      history.push('/')
+      this.setState({
+        message: "Some error in login"
+      })
+    })
+  }
   render() {
     return (
-      <Row className="m-0 justify-content-center">
-        <Col
-          sm="10"
-          xl="10"
-          lg="10"
-          md="10"
-          className="justify-content-center"
-        >
-          <Card className="bg-authentication rounded-0 mb-0">
+      <div style={{background:"#bae7ff",padding:"20px"}}>
+      <Row className="m-0 justify-content-center" style={{background:"#fff",borderRadius:"15px"}}>
+        <Col lg="7" md="7" style={{textAlign:"center"}}>
+          <img src={registrationleft} style={{width:"100%"}} />
+        </Col>
+        <Col lg="5" md="5" style={{textAlign:"center"}}>
             <Row className="m-0">
-              <Col
-                lg="3"
-                className="d-lg-block d-none text-center align-self-center px-1 py-0"
-              >
-                <img className="mr-1" src={registerImg} alt="registerImg" style={{width: "100%"}}/>
-              </Col>
-              <Col lg="9" md="12" className="p-0">
-                <Card className="rounded-0 mb-0 p-2">
-                  <CardHeader className="pb-1 pt-50">
+              <Col lg="12" className="p-0" style={{background:"#bae7ff"}}>
+                {/* <Card className="rounded-0 mb-0 p-2"> */}
+                  {/* <CardHeader className="pb-1 pt-50">
                     <CardTitle>
-                      <h4 className="mb-0">Create Account</h4>
+                      <h4 className="mb-0">Create an Account</h4>
                     </CardTitle>
-                  </CardHeader>
+                  </CardHeader> */}
                   <p className="px-2 auth-title mb-0">
-                    Fill the below form to create a new account.
+                    {this.state.rtext}
                   </p>
                   <CardBody className="pt-1 pb-50">
-                        <SignupForm />
+                    <SignupForm />
                   </CardBody>
-                </Card>
+                {/* </Card> */}
               </Col>
             </Row>
-          </Card>
+          <img src={loginbottom} style={{width:"100%"}} style={{marginTop:"20px"}} />
         </Col>
       </Row>
+        </div>
     )
   }
 }

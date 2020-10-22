@@ -21,7 +21,7 @@ const invoice = lazy(() => import("./views/pages/invoice/Invoice"));
 const email = lazy(() => import("./views/apps/email/Email"));
 const chat = lazy(() => import("./views/apps/chat/Chat"));
 const todo = lazy(() => import("./views/apps/todo/Todo"));
-const Login = lazy(() => import("./views/pages/authentication/Newpage"));
+//const Login = lazy(() => import("./views/pages/authentication/Newpage"));
 const validateOTP = lazy(() =>
   import("./views/pages/authentication/ValidateOTP")
 );
@@ -77,6 +77,43 @@ const upcomingevents = lazy(() =>
 const download = lazy(() => import("./views/pages/download/Download"));
 const eposter = lazy(() => import("./views/pages/eposter/Eposter"));
 const certificate = lazy(() => import("./views/pages/certificate/Certificate"));
+//const chatRoom = lazy(() => import("./views/pages/CometChatUnified/index"))
+//const photoBooth = lazy(() => import("./views/pages/PhotoBooth"))
+//const faq = lazy(() => import("./views/pages/faq/FAQ"))
+//const accountSettings = lazy(() => import("./views/pages/account-settings/AccountSettings"))
+//const invoice = lazy(() => import("./views/pages/invoice/Invoice"))
+//const email = lazy(() => import("./views/apps/email/Email"))
+//const chat = lazy(() => import("./views/apps/chat/Chat"))
+//const todo = lazy(() => import("./views/apps/todo/Todo"))
+// const Login = lazy(() => import("./views/pages/authentication/Newpage"))
+// const Login = lazy(() => import("./views/pages/authentication/login/Login1"))
+const Login = lazy(() => import("./views/pages/authentication/login/Login1"))
+
+// const validateOTP = lazy(() => import("./views/pages/authentication/ValidateOTP"))
+// const forgotPassword = lazy(() => import("./views/pages/authentication/ForgotPassword"))
+// const lockScreen = lazy(() => import("./views/pages/authentication/LockScreen"))
+// const resetPassword = lazy(() => import("./views/pages/authentication/ResetPassword"))
+// const index = lazy(() => import("./views/pages/authentication/register/index"))
+// const addregistration = lazy(() => import("./views/forms/formik/AddRegistration"))
+// const registrationlist = lazy(() => import("./views/tables/data-tables/Registration"))
+// const registrationlist1 = lazy(() => import("./views/tables/data-tables/Registration1"))
+// const scientificlobby = lazy(() => import("./views/pages/scientificlobby/Index"))
+// const exhibitionlobby = lazy(() => import("./views/pages/exhibitionlobby/Index"))
+// const exhibitionstall = lazy(() => import("./views/pages/exhibitionstall/Index"))
+// const sponsor = lazy(() => import("./views/pages/sponsor/Sponsor"))
+// const sponsordetails = lazy(() => import("./views/pages/sponsor-details/SponsorDetails"))
+// const liveview = lazy(() => import("./views/pages/liveview/Live"))
+// const programme = lazy(() => import("./views/pages/programme/Programme"))
+// const awards = lazy(() => import("./views/pages/awards/Index"))
+// const home = lazy(() => import("./views/pages/home/Index"))
+// const pharmahome = lazy(() => import("./views/pages/pharmahome/Index"))
+// const pastevents = lazy(() => import("./views/pages/pastevents/Pastevents"))
+// const questions = lazy(() => import("./views/pages/questions/Question"))
+// const delegate = lazy(() => import("./views/pages/delegate/Delegate"))
+// const upcomingevents = lazy(() => import("./views/pages/upcomingevents/Upcomingevents"))
+// const download = lazy(() => import("./views/pages/download/Download"))
+// const eposter = lazy(() => import("./views/pages/eposter/Eposter"))
+// const certificate = lazy(() => import("./views/pages/certificate/Certificate"))
 // const scientifichall0 = lazy(() => import("./views/pages/scientific-hall0/ScientificHall"))
 const scientifichall1 = lazy(() =>
   import("./views/pages/scientific-hall1/ScientificHall")

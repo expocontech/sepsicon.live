@@ -92,7 +92,7 @@ class Register extends React.Component {
           sessionStorage.setItem('mobile', response.data.mobile)
           //history.push("/pages/home")
 
-window.location="/pages/home"
+          window.location="/pages/home"
 
           // history.push('/');
           this.setState({

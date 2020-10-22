@@ -33,17 +33,17 @@ class Login extends React.Component {
     return (
       <Row className="m-0 justify-content-center">
         <Col
-          sm="8"
-          xl="7"
+          sm="10"
+          xl="10"
           lg="10"
-          md="8"
+          md="10"
           className="d-flex justify-content-center"
         >
-          <Card className="bg-authentication login-card rounded-0 mb-0 w-100">
+          <Card className="bg-authentication login-card rounded-0 mb-0 w-100" style={{background:"#fff",padding:"10px"}}>
             <Row className="m-0">
               <Col
                 lg="6"
-                className="d-lg-block d-none text-center align-self-center px-1 py-0"
+                className="p-0"
               >
                 <img src={loginImg} alt="loginImg" />
               </Col>

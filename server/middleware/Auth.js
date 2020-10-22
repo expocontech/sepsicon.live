@@ -84,8 +84,10 @@ const jwtExpirySeconds = 259200 //86400 second for 1 day..Here it is set for 3 d
 
 //sigin without logout checking
 const signIn = (req, res) => {
-  const { email, password } = req.body
-  connection.query('SELECT * FROM user WHERE email = ?', [email.toLowerCase()], (error, results) => {
+  const { email} = req.body
+  connection.query('SELECT * FROM user WHERE email = ? OR mobile = ?', [email,email], (error, results) => {
+    console.log(error);
+    console.log(results);
     if (error) {
       console.log(error);
       var err = {
