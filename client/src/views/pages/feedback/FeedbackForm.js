@@ -1,3 +1,4 @@
+
 import React, { Component } from "react"
 import {
   Card,
@@ -31,46 +32,97 @@ class FeedbackForm extends React.Component {
     message: ''
   }
 
+  // componentDidUpdate(preState){
+  //   if(preState!==this.state){
+  //     this.setState({
+  //       o1: '',
+  //     })
+  //   }
+  // }
+
+  handleQ1Change= (e) => {
+    this.setState({
+      o1: e.target.value
+    });
+  }
+
+  handleQ2Change= (e) => {
+    this.setState({
+      o2: e.target.value
+    });
+  }
+
+  handleQ3Change= (e) => {
+    this.setState({
+      o3: e.target.value
+    });
+  }
+
+  handleQ4Change= (e) => {
+    this.setState({
+      o4: e.target.value
+    });
+  }
+
+  handleQ5Change= (e) => {
+    this.setState({
+      o5: e.target.value
+    });
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (sessionStorage.getItem('token') != null) {
-      const authHeader = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token').toString() };
-      var id = sessionStorage.getItem('uid').toString();
-      const data = {
-        uidval: id,
-        o1: this.state.o1,
-        o2: this.state.o2,
-        o3: this.state.o3,
-        o4: this.state.o4,
-        o5: this.state.o5,
-        o6: this.state.o6
-      }
-      console.log("Data", data)
-      axios.post(`${process.env.REACT_APP_BASENAME}feedback/result`, data, { headers: authHeader })
-        .then(response => {
-          console.log(response.data)
-          if (response.data.status) {
-            this.setState({
-              message: "Feedback submitted",
-              o1: '',
-              o2: '',
-              o3: '',
-              o4: '',
-              o5: '',
-              o6: ''
-            })
-          }
-        })
-        .catch(error => {
-          console.log(error)
-          this.setState({
-            message: "Feedback not submitted"
-          })
-        })
+    this.setState({message:''});
+    if(this.state.o1 == '' || this.state.o2 == '' || this.state.o3 == '' || this.state.o4 == '' || this.state.o5 == ''){
+      this.setState({message:'Fill all the details'});
     }
-    else {
-      history.push('/')
+    else
+    {
+      if (sessionStorage.getItem('token') != null) {
+        const authHeader = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token').toString() };
+        var id = sessionStorage.getItem('uid').toString();
+        var name = sessionStorage.getItem('name').toString();
+        const data = {
+          uidval: id,
+          q1: this.state.o1,
+          q2: this.state.o2,
+          q3: this.state.o3,
+          q4: this.state.o4,
+          q5: this.state.o5,
+          name : name
+        }
+        console.log("Data", data)
+        axios.post(`${process.env.REACT_APP_BASENAME}feedback/result`, data, { headers: authHeader })
+          .then(response => {
+            console.log(response.data)
+            if (response.data.status) {
+              this.setState({
+                message: "Feedback successful submitted....!",
+                o1: '',
+                o2: '',
+                o3: '',
+                o4: '',
+                o5: '',
+                o6: ''
+              })
+            }
+            console.log(this.props);
+            console.log(history);
+            setTimeout(() => {
+              window.location.href = history.location.pathname
+            }, 2000);
+            
+          })
+          .catch(error => {
+            console.log(error)
+            this.setState({
+              message: "Feedback not submitted"
+            })
+          })
+      }
+      else {
+        history.push('/')
+      }
     }
   }
   render() {
@@ -83,61 +135,61 @@ class FeedbackForm extends React.Component {
        <h3>Feedback Form</h3>
               <h5><br />1. Did you like this virtual Event? </h5>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 1 </Label>
+              <Label check> <Input type="radio" value="1" name="q1" onChange={this.handleQ1Change}/> 1 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 2 </Label>
+              <Label check> <Input type="radio" value="2" name="q1" onChange={this.handleQ1Change}/> 2 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 3 </Label>
+              <Label check> <Input type="radio" value="3" name="q1" onChange={this.handleQ1Change}/> 3 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 4 </Label>
+              <Label check> <Input type="radio" value="4" name="q1" onChange={this.handleQ1Change}/> 4 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 5 </Label>
+              <Label check> <Input type="radio" value="5" name="q1" onChange={this.handleQ1Change}/> 5 </Label>
             </FormGroup>
             <br/> <h5><br />2. Did you like the content? </h5>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 1 </Label>
+              <Label check> <Input type="radio" value="1" name="q2" onChange={this.handleQ2Change}/> 1 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 2 </Label>
+              <Label check> <Input type="radio" value="2" name="q2" onChange={this.handleQ2Change}/> 2 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 3 </Label>
+              <Label check> <Input type="radio" value="3" name="q2" onChange={this.handleQ2Change}/> 3 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 4 </Label>
+              <Label check> <Input type="radio" value="4" name="q2" onChange={this.handleQ2Change}/> 4 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 5 </Label>
+              <Label check> <Input type="radio" value="5" name="q2" onChange={this.handleQ2Change}/> 5 </Label>
             </FormGroup>
             <br/> <h5><br />3. How will you rate your overall experience of SEPSICON 2020? </h5>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 1 </Label>
+              <Label check> <Input type="radio" value="1" name="q3" onChange={this.handleQ3Change}/> 1 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 2 </Label>
+              <Label check> <Input type="radio" value="2" name="q3" onChange={this.handleQ3Change}/> 2 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 3 </Label>
+              <Label check> <Input type="radio" value="3" name="q3" onChange={this.handleQ3Change}/> 3 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 4 </Label>
+              <Label check> <Input type="radio" value="4" name="q3" onChange={this.handleQ3Change}/> 4 </Label>
             </FormGroup>
             <FormGroup check inline>
-              <Label check> <Input type="radio" name="basicRadio" /> 5 </Label>
+              <Label check> <Input type="radio" value="5" name="q3" onChange={this.handleQ3Change}/> 5 </Label>
             </FormGroup>
             <br/>  <br/> <h5>4. Will you attend the next schedule of Sepsicon, If  Planned?</h5>
             <FormGroup>
-              <Input type="textarea" id="Comments" rows="6" placeholder="" required />
+              <Input type="textarea" id="Comments" rows="6" placeholder="" onChange={this.handleQ4Change} required />
             </FormGroup>
             <h5>5. Share your observations which will help us to improve in the upcoming Event</h5>
             <FormGroup>
-              <Input type="textarea" id="Comments" rows="6" placeholder="" required />
+              <Input type="textarea" id="Comments" rows="6" placeholder="" onChange={this.handleQ5Change} required />
             </FormGroup>
-            <span className="text-danger">{this.state.message}</span>
+            <span className="text-success">{this.state.message}</span>
                   <Col
                     className="d-flex justify-content-end flex-wrap" sm="12" >
                     <Button.Ripple className="" color="primary" type="submit" onClick={this.handleSubmit}>Submit</Button.Ripple>

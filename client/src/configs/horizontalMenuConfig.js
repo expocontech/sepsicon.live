@@ -67,14 +67,14 @@ const horizontalMenuConfig = [
   //       }
   //     ]
   //   },
-  {
-    id: "faculty1",
-    title: "Faculty",
-    type: "item",
-    icon: <Icon.Mic size={20} />,
-    permissions: ["admin", "editor"],
-    navLink: "/pages/faculty"
-  },
+  // {
+  //   id: "faculty1",
+  //   title: "Faculty",
+  //   type: "item",
+  //   icon: <Icon.Mic size={20} />,
+  //   permissions: ["admin", "editor"],
+  //   navLink: "/pages/faculty"
+  // },
   // {
   //   id: "meetings",
   //   title: "Meetings",
@@ -91,14 +91,14 @@ const horizontalMenuConfig = [
   //   permissions: ["admin", "editor"],
   //   navLink: "/pages/download"
   // },
-  {
-    id: "quiz",
-    title: "Quiz",
-    type: "item",
-    icon: <FaRegQuestionCircle size={20} />,
-    permissions: ["admin", "editor"],
-    navLink: "/pages/quiz"
-  },
+  // {
+  //   id: "quiz",
+  //   title: "Quiz",
+  //   type: "item",
+  //   icon: <FaRegQuestionCircle size={20} />,
+  //   permissions: ["admin", "editor"],
+  //   navLink: "/pages/quiz"
+  // },
   {
     id: "chatroom",
     title: "Chat",
@@ -147,15 +147,15 @@ const horizontalMenuConfig = [
     icon: <FaCertificate size={20} />,
     permissions: ["admin", "editor"],
     navLink: "/pages/downloadcertificate"
+  },
+  {
+    id: "logout",
+    title: "Logout",
+    type: "item",
+    icon: <Icon.Power size={20} />,
+    permissions: ["admin", "editor"],
+    navLink: "/logout"
   }
-  // {
-  //   id: "logout",
-  //   title: "Logout",
-  //   type: "item",
-  //   icon: <Icon.Power size={20} />,
-  //   permissions: ["admin", "editor"],
-  //   navLink: "/logout"
-  // }
 ]
 
 export default horizontalMenuConfig

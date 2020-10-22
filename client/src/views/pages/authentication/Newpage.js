@@ -92,7 +92,7 @@ class WelcomeVideo extends React.Component {
     return (
       // <Row className="m-0 justify-content-center" >
       <Row >
-        <img src={banner} alt="lobby" width="100%" className='login-background-banner' style={{backgroundSize: "107%"}}/>
+        <img src={banner} alt="lobby" width="100%" className='login-background-banner' style={{backgroundSize: "100%"}}/>
         <div className="welcomvideo" style={{ position: "absolute", left: "8.4%", width: "25.3%", height: "20.3%", top: "51%", cursor: "pointer" }} onClick={this.toggleModal} >
           <span className='hint' style={{ height: "15px", width: "15px" }}></span>
         </div>

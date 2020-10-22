@@ -480,7 +480,7 @@ class CometChatUnified extends React.Component {
         {/* <Col md="2" sm="12" xs="12" ></Col>
        <Col md="6" sm="12" xs="12"  style={{ position: "absolute", left: "25%", width: "100%", height: "50%", top: "25%", cursor: "pointer", WebkitTransform: "rotate(0deg)" }}> */}
       <div css={unifiedPageStyle(this.theme)} style={{ position: "absolute", left: "20%", width: "60%", height: "50%", top: "22%", cursor: "pointer", WebkitTransform: "rotate(0deg)" }}>
-      <div css={unifiedStyle(this.theme)}>
+      <div css={unifiedStyle(this.theme)} style={{background:"#fff"}}>
         <div css={unifiedSidebarStyle(this.state, this.theme)}>
           <NavBar 
           theme={this.theme}
