@@ -74,10 +74,10 @@ const UserDropdown = (props) => {
         <FaWpforms size={14} className="mr-50" />
         <span className="align-middle">Exhibitor</span>
       </DropdownItem>  */}
-      <DropdownItem tag="a" href="/logout">
+      {/* <DropdownItem tag="a" href="/logout">
         <Icon.DownloadCloud size={14} className="mr-50" />
         <span className="align-middle">Download certificate</span>
-      </DropdownItem>
+      </DropdownItem> */}
       <DropdownItem tag="a" href="/logout">
         <Icon.Power size={14} className="mr-50" />
         <span className="align-middle">Log Out</span>
@@ -228,7 +228,7 @@ class NavbarUser extends React.PureComponent {
     const name = sessionStorage.getItem("name");
     const institute = sessionStorage.getItem("institute");
     return (
-      <ul className="nav navbar-nav navbar-nav-user float-right">
+      <ul className="nav navbar-nav navbar-nav-user float-right"  style={{width:"24%"}}>
         {/* <IntlContext.Consumer>
           {context => {
             let langArr = {

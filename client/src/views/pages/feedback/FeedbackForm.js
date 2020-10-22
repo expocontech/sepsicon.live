@@ -79,8 +79,72 @@ class FeedbackForm extends React.Component {
         <CardBody>
           <Row>
             <Col sm="12">
+              <Form>
+       <h3>Feedback Form</h3>
+              <h5><br />1. Did you like this virtual Event? </h5>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 1 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 2 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 3 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 4 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 5 </Label>
+            </FormGroup>
+            <br/> <h5><br />2. Did you like the content? </h5>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 1 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 2 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 3 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 4 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 5 </Label>
+            </FormGroup>
+            <br/> <h5><br />3. How will you rate your overall experience of SEPSICON 2020? </h5>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 1 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 2 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 3 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 4 </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check> <Input type="radio" name="basicRadio" /> 5 </Label>
+            </FormGroup>
+            <br/>  <br/> <h5>4. Will you attend the next schedule of Sepsicon, If  Planned?</h5>
+            <FormGroup>
+              <Input type="textarea" id="Comments" rows="6" placeholder="" required />
+            </FormGroup>
+            <h5>5. Share your observations which will help us to improve in the upcoming Event</h5>
+            <FormGroup>
+              <Input type="textarea" id="Comments" rows="6" placeholder="" required />
+            </FormGroup>
+            <span className="text-danger">{this.state.message}</span>
+                  <Col
+                    className="d-flex justify-content-end flex-wrap" sm="12" >
+                    <Button.Ripple className="" color="primary" type="submit" onClick={this.handleSubmit}>Submit</Button.Ripple>
+                  </Col>
+          </Form>
 
-              <Form >
+              {/* <Form >
                 <Row>
                   <Col md="12" sm="12">
                     <p><br />Q01. Which of the following causes fatigue in men more than in women?Which of the following is your preferred therapy in high cardiovascular risk patients of Stable Coronary Artery Disease with no previous History of MI or stroke?</p>
@@ -135,12 +199,6 @@ class FeedbackForm extends React.Component {
                     <Radio label="c) More efficacy, less bleeding risk" color="primary" defaultChecked={false} name="o6" value="c" className="py-50" onChange={e => this.setState({ o6: e.target.value })} />
                     <Radio label="d) Similar efficacy, similar bleeding risk" color="primary" defaultChecked={false} name="o6" value="d" className="py-50" onChange={e => this.setState({ o6: e.target.value })} />
                   </Col>
-                  {/*  <Col md="12" sm="12">
-                <FormGroup>
-                  <Label for="mobile">Comments</Label>
-                  <Input type="textarea" id="Comments" rows="6" placeholder="Comments" required />
-                </FormGroup>
-              </Col>  */}
 
                   <span className="text-danger">{this.state.message}</span>
                   <Col
@@ -148,7 +206,7 @@ class FeedbackForm extends React.Component {
                     <Button.Ripple className="" color="primary" type="submit" onClick={this.handleSubmit}>Submit</Button.Ripple>
                   </Col>
                 </Row>
-              </Form>
+              </Form> */}
             </Col>
           </Row>
         </CardBody>

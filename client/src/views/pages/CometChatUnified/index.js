@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Row, Col } from "reactstrap"
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
@@ -16,6 +16,7 @@ import MessageThread from "../MessageThread";
 import CallAlert from "../CallAlert";
 import CallScreen from "../CallScreen";
 import ImageView from "../ImageView";
+import lobby from "../../../assets/img/sponsor/bg.jpg"
 
 import { theme } from "../../resources/theme";
 
@@ -474,7 +475,11 @@ class CometChatUnified extends React.Component {
     }
     
     return (
-      <div css={unifiedPageStyle(this.theme)}>
+      <Row>
+        <img src={lobby} alt="lobby" width="100%" style={{ backgroundSize: "107%" }} />
+        {/* <Col md="2" sm="12" xs="12" ></Col>
+       <Col md="6" sm="12" xs="12"  style={{ position: "absolute", left: "25%", width: "100%", height: "50%", top: "25%", cursor: "pointer", WebkitTransform: "rotate(0deg)" }}> */}
+      <div css={unifiedPageStyle(this.theme)} style={{ position: "absolute", left: "20%", width: "60%", height: "50%", top: "22%", cursor: "pointer", WebkitTransform: "rotate(0deg)" }}>
       <div css={unifiedStyle(this.theme)}>
         <div css={unifiedSidebarStyle(this.state, this.theme)}>
           <NavBar 
@@ -505,6 +510,8 @@ class CometChatUnified extends React.Component {
         {imageView}
       </div>
       </div>
+      {/* </Col> */}
+      </Row>
     );
   }
 }

@@ -149,6 +149,7 @@ class Banner extends React.Component {
         playVideo={this.state.showEntranceVideo}
         hideVideo={this.entranceVideoToggler}
         url={"https://live.iamicon.in/videos/exhibition.mp4"}
+mute={true}
       />
     );
 

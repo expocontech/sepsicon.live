@@ -26,7 +26,7 @@ import lobby from "../../../assets/img/sponsor/newlobby12.jpg";
 import agendapdf from "../../../assets/img/sponsor/agenda.pdf";
 import Agenda from "./Agenda";
 import Stalls from "./Stalls";
-import "../Pulse_Blue.css";
+import "../Pulse_Red.css";
 import { useState } from "react";
 
 const params = {
@@ -52,6 +52,9 @@ const CustomMainHall = ({ item }) => {
   const toggleTooltip = () => {
     setShowTooltip(!showTooltip);
   };
+  const entranceVideoStorageHandler = () => {
+    sessionStorage.setItem("auditoriumVideoPlay", "true");
+  };
   return (
     <>
       <div
@@ -66,6 +69,7 @@ const CustomMainHall = ({ item }) => {
           cursor: "pointer",
         }}
         onClick={() => {
+          entranceVideoStorageHandler();
           history.push(`${item.url}`);
         }}
       >
@@ -90,12 +94,18 @@ class Banner extends React.Component {
     tooltipOpen1: false,
     tooltipOpen2: false,
     tooltipOpen0: false,
+    tooltipOpen11: false,
     data: [],
     hicon: [],
   };
   toggleTooltip0 = () => {
     this.setState({
       tooltipOpen0: !this.state.tooltipOpen0,
+    });
+  };
+  toggleTooltip11 = () => {
+    this.setState({
+      tooltipOpen11: !this.state.tooltipOpen11,
     });
   };
 
@@ -141,7 +151,7 @@ class Banner extends React.Component {
           console.log(response.data);
           this.setState({
             data: response.data.result,
-            modal: !this.state.modal,
+            //modal: !this.state.modal,
           });
         })
         .catch((error) => {
@@ -152,15 +162,17 @@ class Banner extends React.Component {
       history.push("/");
     }
   };
+
   render() {
     // const { img1, img2, img3, img4 } = this.state
     console.log(this.state.data);
     return (
-      <Row>
+      <Row style={{ alignItems: "center !important" }}>
         <img
           src={lobby}
           alt="lobby"
           width="100%"
+          className="home-background-image"
           style={{ backgroundSize: "107%" }}
         />
         <div
@@ -168,10 +180,10 @@ class Banner extends React.Component {
           id="welcomvideo"
           style={{
             position: "absolute",
-            left: "42.5%",
-            width: "15.3%",
-            height: "13.5%",
-            top: "46.9%",
+            left: "41%",
+            width: "18%",
+            height: "14%",
+            top: "35.2%",
             cursor: "pointer",
           }}
           onClick={this.toggleModal}
@@ -186,24 +198,53 @@ class Banner extends React.Component {
             target="welcomvideo"
             toggle={this.toggleTooltip1}
           >
-            Welcome Message
+            Video
           </Tooltip>
         </div>
+        {/* <div
+          className="infodisk"
+          id="infodisk"
+          style={{
+            position: "absolute",
+            left: "40%",
+            width: "19.6%",
+            height: "5.3%",
+            top: "73.3%",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            history.push("/pages/infodisk");
+          }}
+        >
+          <span
+            className="hint"
+            style={{ height: "12px ", width: "12px" }}
+          ></span>
+          <Tooltip
+            placement="top"
+            isOpen={this.state.tooltipOpen11}
+            target="infodisk"
+            toggle={this.toggleTooltip11}
+          >
+            Info Disk
+          </Tooltip>
+        </div> */}
 
         {this.state.data.map((item) => (
           <CustomMainHall item={item} key={item.name} />
         ))}
         {/* <Stalls /> */}
+        <Agenda />
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggleModal}
           className="modal-dialog-centered modal-lg"
         >
-          <ModalHeader toggle={this.toggleModal}>Welcome Message</ModalHeader>
+          <ModalHeader toggle={this.toggleModal}>Video</ModalHeader>
           <ModalBody className="text-center">
             <iframe
               className="embed-responsive-item w-100"
-              src="https://www.youtube.com/embed/_UafVmFJ2PU?autoplay=1"
+              src="https://www.youtube.com/embed/cDN_rmU0D1g?autoplay=1"
               allowFullScreen
               title="post"
               frameBorder="0"

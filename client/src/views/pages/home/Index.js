@@ -11,9 +11,9 @@ import { toggleFullScreen } from "../../ui-elements/VideoPlayer/ToggleFullScreen
 
 import "swiper/css/swiper.css";
 import "../../../assets/scss/plugins/extensions/swiper.scss";
-import  * as actions from "../../../redux/actions/auth/cometChatAction";
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import * as actions from "../../../redux/actions/auth/cometChatAction";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import { COMETCHAT_CONSTANTS } from "../../../consts";
 
 class Index extends React.Component {
@@ -23,8 +23,11 @@ class Index extends React.Component {
   };
 
   componentDidMount() {
-    console.log('here')
-    this.props.onSignUp(sessionStorage.getItem("uid"), COMETCHAT_CONSTANTS.AUTH_KEY);
+    console.log("here");
+    this.props.onSignUp(
+      sessionStorage.getItem("uid"),
+      COMETCHAT_CONSTANTS.AUTH_KEY
+    );
 
     const prevLocation = sessionStorage.getItem("prevLocationUrl");
     if (prevLocation !== "/") {
@@ -57,7 +60,7 @@ class Index extends React.Component {
           onClick={this.playEntranceVideoToggler}
           className={this.state.playEntranceVideo ? "animateNow" : null}
         >
-          Click Here To Start The Journery
+          Click Here To Start The Jounery
         </Button>
         <Button
           onClick={() => {
@@ -79,18 +82,18 @@ class Index extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     loading: state.loading,
     error: state.error,
-    isLoggedIn: state.isLoggedIn
+    isLoggedIn: state.isLoggedIn,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onSignUp: ( uid, authKey ) => dispatch( actions.auth( uid, authKey ) )
+    onSignUp: (uid, authKey) => dispatch(actions.auth(uid, authKey)),
   };
 };
 
-export default connect( mapStateToProps, mapDispatchToProps )(withRouter(Index));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Index));

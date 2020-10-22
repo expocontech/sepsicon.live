@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const fs = require('fs');
-//const https = require('https');
-const http = require('http');
+const https = require('https');
+//const http = require('http');
 const path = require('path');
 const fileUpload = require('express-fileupload');
 const connection = require('./config.js')
@@ -35,18 +35,18 @@ const home_lobbyRoute = require('./Routes/HomeLobbyRoute')
 const exhibitionRoute = require('./Routes/ExhibitionRoute')
 const logoutRoute = require('./Routes/LogoutRoute')
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8028;
 
 //certificate
-// const privateKey = fs.readFileSync('./security/private.pem', 'utf8');
-// const certificate = fs.readFileSync('./security/cert.pem', 'utf8');
-// const ca = fs.readFileSync('./security/chain.pem', 'utf8');
+ const privateKey = fs.readFileSync('./security/private.pem', 'utf8');
+ const certificate = fs.readFileSync('./security/cert.pem', 'utf8');
+ const ca = fs.readFileSync('./security/chain.pem', 'utf8');
 
-// const credentials = {
-//   key: privateKey,
-//   cert: certificate,
-//   ca: ca
-// };
+ const credentials = {
+   key: privateKey,
+   cert: certificate,
+   ca: ca
+ };
 app.use(fileUpload());
 
 app.use(cookieParser());
@@ -167,14 +167,14 @@ app.get('/testemail', (req, res) => {
 })
 
 // Starting both http & https servers
-const httpServer = http.createServer(app);
-//const httpsServer = https.createServer(credentials, app);
+//const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(port, () => {
- console.log(`HTTP Server running on port ${port}`);
-});
+//httpServer.listen(port, () => {
+// console.log(`HTTP Server running on port ${port}`);
+//});
 
-//  httpsServer.listen(port, () => {
-//  	console.log('HTTPS Server running on port 8024');
-//  });
+ httpsServer.listen(port, () => {
+  	console.log('HTTPS Server running on port 8028');
+  });
 

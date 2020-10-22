@@ -7,12 +7,15 @@ class Feedback extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <h1 className="mt-1 mb-2">Feedback</h1>
+      {/* <h1 className="mt-1 mb-2">Feedback</h1> */}
       {/* <ExtensionsHeader
         title="Add Registration"
       /> */}
-        <Row>
-          <Col sm="12">
+        <Row style={{backgroundImage: `url(${require("../../../assets/img/sponsor/empty_hall.jpg")})`, backgroundRepeat:"no-repeat",backgroundAttachment:"fixed",backgroundSize
+        :"cover"}}>   
+        <Col sm="2"></Col>
+          <Col 
+          sm="8" style={{paddingTop:"100px"}}>  
             <FeedbackForm />
           </Col>
         </Row>

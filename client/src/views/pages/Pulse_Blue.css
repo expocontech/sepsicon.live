@@ -1,13 +1,9 @@
 .hint {
   border-radius: 50%;
   margin: 10px;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
   background: rgba(33, 113, 195, 1);
-  -webkit-box-shadow: 0 0 0 0 rgba(33, 113, 195, 1);
   box-shadow: 0 0 0 0 rgba(33, 113, 195, 1);
-  -webkit-animation: pulse-white 2s infinite;
   animation: pulse-white 2s infinite;
   position: absolute;
   top: 40%;
@@ -16,48 +12,40 @@
   margin: 0 auto;
 }
 
-@-webkit-keyframes pulse-white {
-  0% {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-    -webkit-box-shadow: 0 0 0 0 rgba(33, 113, 195, 0.7);
-    box-shadow: 0 0 0 0 rgba(33, 113, 195, 0.7);
+.bg {
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  background-size: cover;
+  height: 100vh;
   }
 
-  70% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-box-shadow: 0 0 0 10px rgba(33, 113, 195, 0);
-    box-shadow: 0 0 0 10px rgba(33, 113, 195, 0);
+  .speaker {
+    text-align: center;
+    margin-top: 20px;
   }
 
-  100% {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-    -webkit-box-shadow: 0 0 0 0 rgba(33, 113, 195, 0);
-    box-shadow: 0 0 0 0 rgba(33, 113, 195, 0);
+  .speaker img {
+    width: 200px;
+    border: 4px solid #fff;
+    margin: 0 auto;
   }
-}
+  .textnames {
+    background: #fff;
+    border-radius: 4px;
+  }
 
 @keyframes pulse-white {
   0% {
-    -webkit-transform: scale(0.95);
     transform: scale(0.95);
-    -webkit-box-shadow: 0 0 0 0 rgba(33, 113, 195, 0.7);
     box-shadow: 0 0 0 0 rgba(33, 113, 195, 0.7);
   }
 
   70% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-box-shadow: 0 0 0 10px rgba(33, 113, 195, 0);
     box-shadow: 0 0 0 10px rgba(33, 113, 195, 0);
   }
 
   100% {
-    -webkit-transform: scale(0.95);
     transform: scale(0.95);
-    -webkit-box-shadow: 0 0 0 0 rgba(33, 113, 195, 0);
     box-shadow: 0 0 0 0 rgba(33, 113, 195, 0);
   }
 }

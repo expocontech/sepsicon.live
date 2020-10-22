@@ -273,7 +273,7 @@ class VerticalLayout extends PureComponent {
           onClick={this.handleAppOverlayClick}
         >
           <Navbar {...navbarProps} />
-          <div className="content-wrapper" style={{marginTop:"0px",padding:"0px"}}>{this.props.children}</div>
+          <div className="content-wrapper" style={{marginTop:"0px",padding:"0px",height:"auto", display: "block"}}>{this.props.children}</div>
         </div>
 
         <Footer {...footerProps} />

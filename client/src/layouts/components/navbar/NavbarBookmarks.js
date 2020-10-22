@@ -14,6 +14,7 @@ import classnames from "classnames"
 import AutoComplete from "../../../components/@vuexy/autoComplete/AutoCompleteComponent"
 import { history } from "../../../history"
 import { connect } from "react-redux"
+import logo from "../../../assets/img/logo/sepsi_logo.jpg"
 import {
   loadSuggestions,
   updateStarred
@@ -198,7 +199,10 @@ class NavbarBookmarks extends React.PureComponent {
           </NavItem>
 
         </ul>
-    <span class="text-bold-600" style={{lineHeight:"1.5",paddingLeft:"10px"}}>{this.state.longtitle} <br/>{this.state.support}</span>
+    <span class="text-bold-600" style={{lineHeight:"1.5",paddingLeft:"10px"}}>      
+    <img src={logo} style={{width:"50%"}}/>
+      {/* {this.state.longtitle} <br/>{this.state.support} */}
+      </span>
         {/* <ul className="nav navbar-nav bookmark-icons">
           {this.renderBookmarks()}
           {extraStarred.length > 0 ? (

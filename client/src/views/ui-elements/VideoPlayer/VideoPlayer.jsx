@@ -7,7 +7,7 @@ import { toggleFullScreen } from "./ToggleFullScreen";
 
 import style from "./VideoPlayer.module.css";
 
-function VideoPlayer({ url, playVideo, hideVideo, showPlayer }) {
+function VideoPlayer({ url, playVideo, hideVideo, showPlayer,mute }) {
   const toggleFullScreenHandler = () => {
     toggleFullScreen();
   };
@@ -29,6 +29,8 @@ function VideoPlayer({ url, playVideo, hideVideo, showPlayer }) {
         controls={false}
         height={"100%"}
         width={"100%"}
+        playsinline
+        muted={mute && mute}
         className={style.VideoPlayer}
         style={{ display: showPlayer && showPlayer ? "block" : "none" }}
         onEnded={() => {

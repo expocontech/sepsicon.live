@@ -24,6 +24,7 @@ import classnames from "classnames"
 import { Eye, Code } from "react-feather"
 import { FaUsers } from "react-icons/fa";
 import * as Icon from "react-feather"
+import "../Pulse_Red.css";
 import agendapdf from "../../../assets/img/sponsor/agenda.pdf"
 
 class Agenda extends React.Component {
@@ -48,8 +49,9 @@ class Agenda extends React.Component {
   render() {
     return (
       <React.Fragment>  
-          <div id="agenda" style={{position: "absolute", left: "6.1%", width: "16%", height: "12.6%", top: "79.9%", cursor: "pointer", WebkitTransform: "rotate(-7deg)"}} 
+          <div id="agenda" style={{position: "absolute", left: "34.1%", width: "5%", height: "15.6%", top: "58.9%", cursor: "pointer"}} 
       onClick={this.toggleModal}>
+      <span className="hint" style={{ height: "12px ", width: "12px" }}></span>
         <Tooltip placement="top" isOpen={this.state.tooltipOpen} target="agenda" toggle={this.toggleTooltip}>
       Agenda
    </Tooltip>
@@ -62,7 +64,7 @@ class Agenda extends React.Component {
                     Scientific Agenda
                   </ModalHeader>
                   <ModalBody>
-            <embed src={agendapdf} width="100%" height="450px" />
+            <iframe src={agendapdf} width="100%" height="450px" ></iframe>
                   </ModalBody>
                 </Modal>
       </React.Fragment>
