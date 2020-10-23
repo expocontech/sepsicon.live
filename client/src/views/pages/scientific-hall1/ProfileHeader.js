@@ -117,7 +117,7 @@ class ProfileHeader extends React.Component {
   render() {
     let content = (
       <VideoPlayer
-        url={"https://live.iamicon.in/videos/exhibition.mp4"}
+        url={"https://sepsicon.s3.ap-south-1.amazonaws.com/walk.mp4"}
         playVideo={this.state.playEntranceVideo}
         hideVideo={this.entranceVideoToggler}
         mute={true}

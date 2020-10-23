@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { CardBody, FormGroup, Form, Input, Button, Label, Col } from "reactstrap"
 import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy"
-import { Mail, Lock, Check } from "react-feather"
+import { Mail, Lock, Check, Phone } from "react-feather"
 //import { loginWithJWT } from "../../../../redux/actions/auth/loginActions"
 import { connect } from "react-redux"
 import { history } from "../../../../history"
@@ -111,15 +111,15 @@ class LoginForm extends React.Component {
             <FormGroup className="form-label-group position-relative has-icon-left">
               <Input
                 type="text"
-                placeholder="Email"
+                placeholder="Email or Mobile No"
                 value={this.state.email}
                 onChange={e => this.setState({ email: e.target.value })}
                 required
               />
               <div className="form-control-position">
-                <Mail size={15} />
+                <Mail size={15} />  <Phone size={15} />
               </div>
-              <Label>Email</Label>
+              <Label>Email or Mobile No</Label>
             </FormGroup>
             {/* <FormGroup className="form-label-group position-relative has-icon-left">
               <Input
@@ -148,6 +148,9 @@ class LoginForm extends React.Component {
               </div> */}
             </FormGroup>
             <div className="d-flex justify-content-between">
+              <Button.Ripple color="primary" type="submit">
+                Login
+              </Button.Ripple>
               <Button.Ripple
                 color="primary"
                 outline
@@ -156,9 +159,6 @@ class LoginForm extends React.Component {
                 }}
               >
                 Register
-              </Button.Ripple>
-              <Button.Ripple color="primary" type="submit">
-                Login
               </Button.Ripple>
             </div>
           </Form>

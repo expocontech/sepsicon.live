@@ -84,9 +84,7 @@ class PhotoBooth extends React.Component {
     };
 
     return (
-      <Row>
-        <img src={lobby} alt="lobby" width="100%" style={{ backgroundSize: "107%" }} />
-       {/* <Row className={"photo-booth-background"}> */}
+       <Row className={"photo-booth-background"}>
       {/* <Row> */}
          {/* <img
           src={lobby}
@@ -95,7 +93,7 @@ class PhotoBooth extends React.Component {
           style={{ backgroundSize: "107%" }}
         /> */}
         <div
-          style={{ position: "absolute", textAlign:"center", width: "100%", height: "50%", top: "22%",
+          style={{
             paddingTop: "8%",
             paddingBottom: "8%",
           }}

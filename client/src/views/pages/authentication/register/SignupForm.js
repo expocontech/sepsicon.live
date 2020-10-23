@@ -237,14 +237,23 @@ class SignupForm extends React.Component {
           <Label>State</Label>
         </FormGroup>
         <FormGroup className="form-label-group">
-        <Input
+        <Input type="select" required className='form-control' value={this.state.institute} onChange={e => this.setState({ institute: e.target.value })}>
+            <option value="0">Select Speciality </option>
+            <option disabled="" selected="" value="0">--Select--</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Anaesthesia">Anaesthesia</option>
+            <option value="Chest">Chest</option>
+            <option value="Other">Other</option>
+          </Input>
+          <Label>Speciality</Label>
+        {/* <Input
             type="text"
             placeholder="Institute"
             required
             value={this.state.institute}
             onChange={e => this.setState({ institute: e.target.value })}
           />
-          <Label>Institute</Label>
+          <Label>Institute</Label> */}
         </FormGroup>
         {/* <FormGroup className="form-label-group">
           <Input type="select" required className='form-control' value={this.state.specilityval} onChange={e => this.setState({ specilityval: e.target.value })}>
@@ -269,6 +278,9 @@ class SignupForm extends React.Component {
             </FormGroup>
           </Col> */}
           <Col md="12" sm="12">
+              <Button.Ripple color="primary" type="submit">
+                Register
+          </Button.Ripple>
             <div className="d-flex justify-content-between">
               <Button.Ripple
                 color="primary"
@@ -278,9 +290,6 @@ class SignupForm extends React.Component {
                 }}
               >
                 Login
-          </Button.Ripple>
-              <Button.Ripple color="primary" type="submit">
-                Register
           </Button.Ripple>
             </div>
           </Col>

@@ -216,8 +216,8 @@
 
 .quiz-background {
   background: url("./assets/img/sponsor/bg.jpg") !important;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   background-position: center;
   width: 100% !important;
   margin-left: 0;
@@ -227,9 +227,9 @@
 // photo booth background
 
 .photo-booth-background {
-  background: url("./assets/img/sponsor/bg.jpg") !important;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("./assets/img/sponsor/photobooth.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   background-position: center;
   width: 100% !important;
   display: flex;
