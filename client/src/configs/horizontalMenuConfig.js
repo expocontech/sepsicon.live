@@ -1,6 +1,6 @@
 import React from "react"
 import * as Icon from "react-feather"
-import { FaWpforms, FaCamera, FaSignal, FaRocketchat, FaTrophy, FaCertificate, FaRegQuestionCircle, FaTicketAlt, FaAward, FaFileDownload, FaUser } from "react-icons/fa"
+import { FaWpforms, FaCamera, FaInfoCircle, FaSignal, FaRocketchat, FaTrophy, FaCertificate, FaRegQuestionCircle, FaTicketAlt, FaAward, FaFileDownload, FaUser } from "react-icons/fa"
 
 const horizontalMenuConfig = [
   {
@@ -147,6 +147,14 @@ const horizontalMenuConfig = [
     icon: <FaCertificate size={20} />,
     permissions: ["admin", "editor"],
     navLink: "/pages/downloadcertificate"
+  },
+  {
+    id: "infodisk",
+    title: "May I Help You",
+    type: "item",
+    icon: <FaInfoCircle size={20} />,
+    permissions: ["admin", "editor"],
+    navLink: "/pages/infodisk"
   },
   {
     id: "logout",

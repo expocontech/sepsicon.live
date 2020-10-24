@@ -25,6 +25,7 @@ import { history } from "../../../../src/history";
 import lobby from "../../../assets/img/sponsor/newlobby12.jpg";
 import agendapdf from "../../../assets/img/sponsor/agenda.pdf";
 import Agenda from "./Agenda";
+import VirtualTourGuide from "./VirtualTourGuide";
 import Stalls from "./Stalls";
 import "../Pulse_Red.css";
 import { useState } from "react";
@@ -151,7 +152,7 @@ class Banner extends React.Component {
           console.log(response.data);
           this.setState({
             data: response.data.result,
-            //modal: !this.state.modal,
+            modal: !this.state.modal,
           });
         })
         .catch((error) => {
@@ -235,6 +236,7 @@ class Banner extends React.Component {
         ))}
         {/* <Stalls /> */}
         <Agenda />
+        <VirtualTourGuide />
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggleModal}

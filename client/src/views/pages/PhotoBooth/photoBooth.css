@@ -1,13 +1,13 @@
-.button-container{
+/* .button-container{
   text-align: center;
 }
 
 .disp-img{
-  border: 5px solid #7CB9E8;
+  border: 5px solid #f7d16e;
 }
 
 .button-container .btn-camera{
-  background-color: #7CB9E8;
+  background-color: #f7d16e;
   height: 55px;
   width: 55px;
   border-radius: 50%;
@@ -15,7 +15,7 @@
 }
 
 .btn-download{
-  background-color: #7CB9E8;
+  background-color: #f7d16e;
   height: 55px;
   width: 55px;
   border-radius: 50%;
@@ -29,6 +29,42 @@
 }
 
 .button-container .btn-camera .icon-camera{
+  font-size: 30px;
+  color: white;
+} */
+
+.button-container{
+  text-align: center;
+  padding-top: 1%;
+}
+
+.disp-img{
+  border: 5px solid #f7d16e;
+}
+
+.button-container .btn-camera{
+  background-color: #f7d16e;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border:none
+}
+
+.btn-download{
+  background-color: #f7d16e;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border:none;
+  margin-left: 20px;
+}
+
+.button-container .btn-camera .icon-camera{
+  font-size: 30px;
+  color: white;
+}
+
+.button-container .btn-download .icon-camera{
   font-size: 30px;
   color: white;
 }

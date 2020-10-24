@@ -11,7 +11,6 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  Input, ModalFooter 
 } from "reactstrap";
 import Swiper from "react-id-swiper";
 //import StatisticsCard from "../../../../components/@vuexy/statisticsCard/StatisticsCard"
@@ -25,7 +24,6 @@ import lobby from "../../../assets/img/sponsor/infodisk.jpg";
 import "../Pulse_Red.css";
 import Radio from "../../../components/@vuexy/radio/RadioVuexy";
 import Agenda from "./Agenda";
-//import Support from "./Support";
 
 const params = {
   spaceBetween: 30,
@@ -48,8 +46,8 @@ class Banner extends React.Component {
   state = {
     modal: false,
     tooltipOpen: false,
-    tooltipOpen1: false,
-    tooltipOpen2: false,
+    // tooltipOpen1: false,
+    // tooltipOpen2: false,
     data: [],
     hicon: [],
   };
@@ -60,17 +58,17 @@ class Banner extends React.Component {
     });
   };
 
-  toggleTooltip1 = () => {
-    this.setState({
-      tooltipOpen1: !this.state.tooltipOpen1
-    })
-  }
+  // toggleTooltip1 = () => {
+  //   this.setState({
+  //     tooltipOpen1: !this.state.tooltipOpen1
+  //   })
+  // }
 
-  toggleTooltip2 = () => {
-    this.setState({
-      tooltipOpen2: !this.state.tooltipOpen2
-    })
-  }
+  // toggleTooltip2 = () => {
+  //   this.setState({
+  //     tooltipOpen2: !this.state.tooltipOpen2
+  //   })
+  // }
 
   toggleModal1 = () => {
     this.setState((prevState) => ({
@@ -119,8 +117,8 @@ class Banner extends React.Component {
           className={"infodex-background-image"}
         />
         <div
-          className="conferencehall"
-          id="conferencehall"
+          className="welcomvideo"
+          id="welcomvideo"
           style={{
             position: "absolute",
             left: "42.5%",
@@ -129,105 +127,16 @@ class Banner extends React.Component {
             top: "42.5%",
             cursor: "pointer",
           }}
-          onClick={() => {
-            history.push("/pages/scientifichall/1");
-          }}
-          // onClick={this.toggleModal}
+          onClick={this.toggleModal}
         >
           <span
             className="hint"
             style={{ height: "12px", width: "12px" }}
           ></span>
-          <Tooltip placement="top" isOpen={this.state.tooltipOpen1} target="conferencehall" toggle={this.toggleTooltip1}>
-            Conference Hall
-       </Tooltip>
+          {/* <Tooltip placement="top" isOpen={this.state.tooltipOpen1} target="welcomvideo" toggle={this.toggleTooltip1}>
+            Welcome Message
+       </Tooltip> */}
         </div>
-
-        <div
-          className="infodisk"
-          id="infodisk"
-          style={{
-            position: "absolute",
-            left: "71%",
-            width: "10%",
-            height: "30.6%",
-            top: "39.9%",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            history.push("/pages/sponsordetails/1");
-          }}
-        >
-          <span
-            className="hint"
-            style={{ height: "12px ", width: "12px" }}
-          ></span>
-          <Tooltip
-            placement="top"
-            isOpen={this.state.tooltipOpen}
-            target="infodisk"
-            toggle={this.toggleTooltip}
-          >
-            SEPSIVAC Info 
-          </Tooltip>
-        </div>
-
-        <div
-          className="technical"
-          id="technical"
-          style={{
-            position: "absolute",
-            left: "38%",
-            width: "36.6%",
-            height: "10.3%",
-            top: "69.3%",
-            cursor: "pointer",
-          }}
-          onClick={this.toggleModal}
-          // onClick={() => {
-          //   history.push("/pages/sponsordetails/1");
-          // }}
-        >
-          <span
-            className="hint"
-            style={{ height: "12px ", width: "12px" }}
-          ></span>
-          <Tooltip
-            placement="top"
-            isOpen={this.state.tooltipOpen2}
-            target="technical"
-            toggle={this.toggleTooltip2}
-          >
-            May I Help You
-          </Tooltip>
-        </div>
-
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggleModal}
-          className={this.props.className}
-          unmountOnClose={this.state.unmountOnClose} className="modal-dialog-centered modal-lg" >
-          <ModalHeader toggle={this.toggleModal}>
-          Ask a Query
-                  </ModalHeader>
-          <span className="text-danger">{this.state.fmessage}</span>
-          <span className="text-success">{this.state.smessage}</span>
-          <ModalBody>
-            <Input
-              type="textarea"
-              rows="{5}"
-              placeholder="Ask a Query"
-              id="add-comment"
-              value={this.state.question}
-              onChange={e => this.setState({ question: e.target.value })}
-            />
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" type="submit" outline onClick={this.handleAddQuestion}>
-              Submit
-                    </Button>{" "}
-          </ModalFooter>
-        </Modal>
         {/* {this.state.data.map(item => (
           <div id={item.id} className="exhihall" style={{ position: "absolute", left: item.dleft + "%", width: item.dwidth + "%", height: item.dheight + "%", top: item.dtop + "%", cursor: "pointer", WebkitTransform: "rotate(0deg)" }}
             onClick={() => { history.push(`/pages/scientifichall/${item.hallid}`) }}>

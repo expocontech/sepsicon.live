@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
     ).catch((error) => {
       history.push('/')
       this.setState({
-        message: "Some error in login"
+        message: "Please enter registered email or mobile"
       })
     })
   }
@@ -94,7 +94,7 @@ class LoginForm extends React.Component {
     ).catch((error) => {
       history.push('/')
       this.setState({
-        message: "Some error in login",
+        message: "Please enter registered email or mobile",
         rstatus: ''
       })
     })
@@ -134,7 +134,7 @@ class LoginForm extends React.Component {
               </div>
               <Label>mobi</Label>
             </FormGroup> */}
-            <FormGroup className="d-flex justify-content-between align-items-center" >
+            {/* <FormGroup className="d-flex justify-content-between align-items-center" >
               <Checkbox
                 color="primary"
                 icon={<Check className="vx-icon" size={16} />}
@@ -143,15 +143,15 @@ class LoginForm extends React.Component {
                 defaultChecked={false}
                 onChange={this.handleRemember}
               />
-              {/* <div className="float-right">
+              <div className="float-right">
                 <Link to="/pages/forgot-password">Forgot Password?</Link>
-              </div> */}
-            </FormGroup>
+              </div>
+            </FormGroup> */}
             <div className="d-flex justify-content-between">
               <Button.Ripple color="primary" type="submit">
                 Login
               </Button.Ripple>
-              <Button.Ripple
+              {/* <Button.Ripple
                 color="primary"
                 outline
                 onClick={() => {
@@ -159,7 +159,7 @@ class LoginForm extends React.Component {
                 }}
               >
                 Register
-              </Button.Ripple>
+              </Button.Ripple> */}
             </div>
           </Form>
 

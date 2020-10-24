@@ -45,7 +45,7 @@ class Login extends React.Component {
     ).catch((error) => {
       history.push('/')
       this.setState({
-        message: "Some error in login"
+        message: "Please enter registered email or mobile"
       })
     })
   }
@@ -82,10 +82,10 @@ class Login extends React.Component {
                 {/* </Card> */}
               </Col>
             </Row>
+            <div style={{background:"#bae7ff",marginTop:"20px"}}>
+              <a href="#" onClick={() => { history.push("/pages/register") }}><img src={btreg} style={{width:"100%"}}/></a>
+            </div>
           <img src={loginbottom} style={{width:"100%"}} style={{marginTop:"20px"}} />
-            {/* <div style={{background:"#bae7ff",marginTop:"20px"}}>
-              <a href="#" ><img src={btreg}/></a>
-            </div> */}
           {/* <img src={btnregister} style={{width:"75%",marginTop:"50px"}} /> */}
         </Col>
       </Row>

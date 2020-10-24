@@ -11,7 +11,6 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  Input, ModalFooter 
 } from "reactstrap";
 import Swiper from "react-id-swiper";
 //import StatisticsCard from "../../../../components/@vuexy/statisticsCard/StatisticsCard"
@@ -25,7 +24,6 @@ import lobby from "../../../assets/img/sponsor/infodisk.jpg";
 import "../Pulse_Red.css";
 import Radio from "../../../components/@vuexy/radio/RadioVuexy";
 import Agenda from "./Agenda";
-//import Support from "./Support";
 
 const params = {
   spaceBetween: 30,
@@ -177,7 +175,7 @@ class Banner extends React.Component {
           id="technical"
           style={{
             position: "absolute",
-            left: "38%",
+            left: "33%",
             width: "36.6%",
             height: "10.3%",
             top: "69.3%",
@@ -198,36 +196,10 @@ class Banner extends React.Component {
             target="technical"
             toggle={this.toggleTooltip2}
           >
-            May I Help You
+            Technical Support
           </Tooltip>
         </div>
 
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggleModal}
-          className={this.props.className}
-          unmountOnClose={this.state.unmountOnClose} className="modal-dialog-centered modal-lg" >
-          <ModalHeader toggle={this.toggleModal}>
-          Ask a Query
-                  </ModalHeader>
-          <span className="text-danger">{this.state.fmessage}</span>
-          <span className="text-success">{this.state.smessage}</span>
-          <ModalBody>
-            <Input
-              type="textarea"
-              rows="{5}"
-              placeholder="Ask a Query"
-              id="add-comment"
-              value={this.state.question}
-              onChange={e => this.setState({ question: e.target.value })}
-            />
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" type="submit" outline onClick={this.handleAddQuestion}>
-              Submit
-                    </Button>{" "}
-          </ModalFooter>
-        </Modal>
         {/* {this.state.data.map(item => (
           <div id={item.id} className="exhihall" style={{ position: "absolute", left: item.dleft + "%", width: item.dwidth + "%", height: item.dheight + "%", top: item.dtop + "%", cursor: "pointer", WebkitTransform: "rotate(0deg)" }}
             onClick={() => { history.push(`/pages/scientifichall/${item.hallid}`) }}>

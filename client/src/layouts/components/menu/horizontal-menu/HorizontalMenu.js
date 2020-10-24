@@ -342,7 +342,7 @@ class HorizontalSidebar extends React.Component {
             }
           )} style={{background:"none"}}>
           <div className="navbar-container main-menu-content">
-            <ul className="nav navbar-nav" id="main-menu-navigation">
+            <ul className="nav navbar-nav" id="main-menu-navigation" style={{justifyContent:"center"}}>
               {this.renderDropdown(navigationConfig)}
             </ul>
           </div>

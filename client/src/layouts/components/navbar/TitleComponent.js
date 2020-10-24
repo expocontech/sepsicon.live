@@ -38,7 +38,7 @@ class TitleComponent extends React.Component {
       </div>
       <h2 className="text-primary brand-text mb-0" style={{textAlign:"center",width:"70%"}}>{this.state.title}</h2>
       <div className="mr-50" style={{textAlign:"center"}}>
-        <img src={logo} style={{width:"50%"}}/>
+        <a href="https://www.cadilapharma.com/" target="_blank"><img src={logo} style={{width:"50%"}}/></a>
       </div>
     </div>
     )

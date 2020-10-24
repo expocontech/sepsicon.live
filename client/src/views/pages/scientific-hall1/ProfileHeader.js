@@ -120,7 +120,7 @@ class ProfileHeader extends React.Component {
         url={"https://sepsicon.s3.ap-south-1.amazonaws.com/walk.mp4"}
         playVideo={this.state.playEntranceVideo}
         hideVideo={this.entranceVideoToggler}
-        mute={true}
+        // mute={true}
       />
     );
 
